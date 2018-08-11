@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name":"mekky news-eradicator",
+    "description":"Replaces useless newsfeed with a picture of god.",
+    "icons":{
+        "128":"mekky16.png",
+        "48":"mekky48.png",
+        "16":"mekky128.png"
+    },
+    "page_action":{
+        "default_icon":"mekky16.png",
+        "default_popup":"popup.html",
+        "default_title":"mekky news-eradicator"
+    },
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    "content_scripts":[
+        {
+            "matches":["https://www.facebook.com/"],
+            "js":["jquery-3.3.1.min.js","content.js"],
+            "css":["content.css"],
+            "all_frames":true
+        }
+    ],
+    "permissions":[
+        "tabs",
+        "https://www.facebook.com/"
+    ]
+}
